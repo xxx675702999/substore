@@ -1,8 +1,8 @@
 # Substore 兼容配置文件，基于 Mihomo Party 脚本改编
 # 保留 DNS、规则提供者、规则和代理组结构
-# 移除静态落地节点和订阅管理，由 Substore 提供节点
-# 落地节点筛选规则：节点名称包含“落地”或“家宽”，支持链式代理
-# 优化：添加 exclude-filter 排除落地节点，确保低延迟组不包含高延迟节点
+# 移除静态节点，依赖 Substore 订阅提供节点
+# 落地节点筛选规则：节点名称包含“落地”或“家宽”，通过组级 dialer-proxy 实现链式代理
+# 注意：若链式代理未生效，需在 Substore 中为筛选出的落地节点（名称含“落地”或“家宽”）添加节点级 dialer-proxy: ⚙️ 节点选择
 
 dns:
   enable: true
@@ -50,7 +50,7 @@ rule-providers:
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
     path: "./ruleset/loyalsoldier/reject.yaml"
-  ic;oud:
+  icloud:
     type: http
     format: yaml
     interval: 86400
