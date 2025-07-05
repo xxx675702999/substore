@@ -2,6 +2,7 @@
 # 保留 DNS、规则提供者、规则和代理组结构
 # 移除静态落地节点和订阅管理，由 Substore 提供节点
 # 落地节点筛选规则：节点名称包含“落地”或“家宽”，支持链式代理
+# 优化：添加 exclude-filter 排除落地节点，确保低延迟组不包含高延迟节点
 
 dns:
   enable: true
@@ -49,7 +50,7 @@ rule-providers:
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
     path: "./ruleset/loyalsoldier/reject.yaml"
-  icloud:
+  ic;oud:
     type: http
     format: yaml
     interval: 86400
@@ -245,6 +246,7 @@ proxy-groups:
       - "⚖️ 负载均衡(散列)"
       - "☁️ 负载均衡(轮询)"
     include-all: true
+    exclude-filter: "(?i)落地|家宽"
     interval: 3600
     timeout: 3000
     url: "https://www.google.com/generate_204"
@@ -270,6 +272,7 @@ proxy-groups:
     type: url-test
     tolerance: 50
     include-all: true
+    exclude-filter: "(?i)落地|家宽"
     interval: 3600
     timeout: 3000
     url: "https://www.google.com/generate_204"
@@ -281,6 +284,7 @@ proxy-groups:
   - name: "🚑 故障转移"
     type: fallback
     include-all: true
+    exclude-filter: "(?i)落地|家宽"
     interval: 3600
     timeout: 3000
     url: "https://www.google.com/generate_204"
@@ -293,6 +297,7 @@ proxy-groups:
     type: load-balance
     strategy: consistent-hashing
     include-all: true
+    exclude-filter: "(?i)落地|家宽"
     interval: 3600
     timeout: 3000
     url: "https://www.google.com/generate_204"
@@ -305,6 +310,7 @@ proxy-groups:
     type: load-balance
     strategy: round-robin
     include-all: true
+    exclude-filter: "(?i)落地|家宽"
     interval: 3600
     timeout: 3000
     url: "https://www.google.com/generate_204"
