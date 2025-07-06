@@ -1,0 +1,39 @@
+{
+  "name": "mihomo",
+  "displayName": "",
+  "remark": "",
+  "icon": "https://raw.githubusercontent.com/cc63/ICON/main/icons/Clash.png",
+  "source": "local",
+  "sourceType": "collection",
+  "sourceName": "substore_merge_config_template",
+  "process": [
+    {
+      "type": "Script Operator",
+      "args": {
+        "content": "https://raw.githubusercontent.com/wangbaoqiang-lixiaolu/substore/refs/heads/main/%E9%93%BE%E5%BC%8F%E4%BB%A3%E7%90%86.js#noCache",
+        "mode": "link",
+        "arguments": {}
+      },
+      "customName": "链式代理",
+      "id": "linkchain-001",
+      "disabled": false
+    },
+    {
+      "type": "Script Operator",
+      "args": {
+        "content": "https://raw.githubusercontent.com/wangbaoqiang-lixiaolu/substore/refs/heads/main/grok.yaml#noCache",
+        "mode": "link",
+        "arguments": {}
+      },
+      "customName": "配置文件",
+      "id": "configfile-002",
+      "disabled": false
+    }
+  ],
+  "type": "mihomoProfile",
+  "content": "// 填入文件内容",
+  "download": true,
+  "display-name": "",
+  "ignoreFailedRemoteFile": false,
+  "subInfoUrl": ""
+}

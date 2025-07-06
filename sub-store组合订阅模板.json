@@ -1,0 +1,127 @@
+{
+  "name": "substore_merge_config_template",
+  "displayName": "sub-store组合订阅模板",
+  "form": "",
+  "remark": "",
+  "mergeSources": "",
+  "ignoreFailedRemoteSub": "quiet",
+  "passThroughUA": false,
+  "icon": "",
+  "process": [
+    {
+      "type": "Quick Setting Operator",
+      "args": {
+        "useless": "DISABLED",
+        "udp": "DEFAULT",
+        "scert": "ENABLED",
+        "tfo": "DEFAULT",
+        "vmess aead": "DEFAULT"
+      }
+    },
+    {
+      "type": "Script Operator",
+      "args": {
+        "content": "https://raw.githubusercontent.com/xream/scripts/refs/heads/main/surge/modules/sub-store-scripts/sub-info/sum.js",
+        "mode": "link",
+        "arguments": {}
+      },
+      "customName": "",
+      "id": "28460290.72169969",
+      "disabled": false
+    },
+    {
+      "type": "Regex Filter",
+      "args": {
+        "keep": false,
+        "regex": [
+          "群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|付费|失联|设置|总计|(\\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\\b|(\\d{4}-\\d{2}-\\d{2}|\\dG))"
+        ]
+      },
+      "id": "10354460.04108187",
+      "disabled": false
+    },
+    {
+      "type": "Handle Duplicate Operator",
+      "args": {
+        "action": "rename",
+        "position": "back",
+        "template": "0 1 2 3 4 5 6 7 8 9",
+        "link": " "
+      },
+      "id": "20454324.864660557",
+      "disabled": false
+    },
+    {
+      "type": "Flag Operator",
+      "args": {
+        "mode": "add",
+        "tw": "cn"
+      },
+      "id": "72382003.7008269",
+      "disabled": false
+    },
+    {
+      "type": "Sort Operator",
+      "args": "asc",
+      "id": "25116284.22819716",
+      "disabled": false
+    },
+    {
+      "type": "Script Operator",
+      "args": {
+        "content": "// 风险节点过滤脚本（已省略大段内容）",
+        "mode": "script",
+        "arguments": {}
+      },
+      "id": "49449781.9219881",
+      "disabled": true
+    },
+    {
+      "type": "Resolve Domain Operator",
+      "args": {
+        "provider": "Ali",
+        "type": "IPv6",
+        "filter": "disabled",
+        "cache": "enabled",
+        "url": "",
+        "edns": ""
+      },
+      "customName": "",
+      "id": "69491248.72493628",
+      "disabled": true
+    },
+    {
+      "type": "Script Operator",
+      "args": {
+        "content": "// IPv6节点命名处理逻辑（已省略）",
+        "mode": "script",
+        "arguments": {}
+      },
+      "customName": "",
+      "id": "56832536.65291016",
+      "disabled": false
+    },
+    {
+      "type": "Script Operator",
+      "args": {
+        "content": "https://raw.githubusercontent.com/Keywos/rule/main/rename.js#bl=true&blkey=家宽+IPLC+IEPL+落地+IPv6&flag=true&in=true&nm=true&out=en+cn",
+        "mode": "link",
+        "arguments": {
+          "bl": "true",
+          "blkey": "家宽+IPLC+IEPL+落地+IPv6",
+          "flag": "true",
+          "in": "true",
+          "nm": "true",
+          "out": "en+cn"
+        }
+      },
+      "id": "25705468.712085843",
+      "disabled": false
+    }
+  ],
+  "subscriptions": [],
+  "tag": [],
+  "subscriptionTags": [],
+  "display-name": "sub-store组合订阅模板",
+  "subUserinfo": ""
+}
