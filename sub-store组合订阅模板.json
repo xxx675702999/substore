@@ -69,8 +69,7 @@
     {
       "type": "Script Operator",
       "args": {
-        "content": "// 风险节点过滤脚本，来自https://linux.do/t/topic/496229
-async function operator (proxies, targetPlatform, context) {
+        "content": "async function operator (proxies, targetPlatform, context) {
     const $ = $substore;
     const cacheEnabled = $arguments.cache;
     const cache = scriptResourceCache;
@@ -253,7 +252,11 @@ async function operator (proxies, targetPlatform, context) {
     {
       "type": "Script Operator",
       "args": {
-        "content": "// IPv6节点命名处理逻辑（已省略）",
+        "content": "if ( (ProxyUtils.isIPv6($server.server) || $server.name.match(/ipv6|v6/i)) && !$server.name.includes('[IPv6]') ) {
+  $server.name = `${$server.name} [IPv6]`;
+}
+
+if ($server._domain) $server.server = $server._domain",
         "mode": "script",
         "arguments": {}
       },
