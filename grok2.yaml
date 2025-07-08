@@ -22,14 +22,36 @@ profile:
   # 储存 API 对策略组的选择，以供下次启动时使用
   store-selected: true
 
-# 代理组
+# 代理节点（新增部分，为落地节点添加链式代理）
+proxies:
+  - name: 韩国家宽01  # 示例节点，需替换为实际节点名称
+    type: vmess  # 假设节点类型，需根据实际订阅调整
+    server: example.com  # 替换为实际服务器地址
+    port: 443  # 替换为实际端口
+    uuid: 00000000-0000-0000-0000-000000000000  # 替换为实际 UUID
+    alterId: 0
+    cipher: auto
+    tls: true
+    dialer-proxy: 节点选择  # 链式代理：通过“节点选择”组转发
+  # 其他落地节点（根据实际订阅添加）
+  - name: 韩国家宽02
+    type: vmess
+    server: example.com
+    port: 443
+    uuid: 00000000-0000-0000-0000-000000000000
+    alterId: 0
+    cipher: auto
+    tls: true
+    dialer-proxy: 节点选择
+
+# 代理组（保持不变）
 proxy-groups:
   - name: 节点选择
     icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png
     type: select
     proxies:
       - 自动选择
-      - 落地节点  # 替换链式代理为落地节点
+      - 落地节点
       - 香港节点
       - 台湾节点
       - 狮城节点
@@ -58,7 +80,7 @@ proxy-groups:
     icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Direct.png
     type: url-test
     include-all: true
-    filter: (?i)家宽|家庭|商宽|落地  # 筛选落地节点
+    filter: (?i)家宽|家庭|商宽|落地
     interval: 300
     tolerance: 20
     lazy: false
@@ -67,7 +89,7 @@ proxy-groups:
     type: select
     proxies:
       - 节点选择
-      - 落地节点  # 替换链式代理为落地节点
+      - 落地节点
       - 香港节点
       - 台湾节点
       - 狮城节点
@@ -522,6 +544,7 @@ proxy-groups:
       - 欧盟节点
       - 非洲节点
 
+# 规则（保持不变）
 rule-providers:
   ADBlock:
     type: http
@@ -646,10 +669,10 @@ rules:
   - "RULE-SET,GoogleFCM,FCM推送"
   - "GEOSITE,GOOGLE-PLAY@CN,全球直连"
   - "GEOSITE,YOUTUBE@CN,全球直连"
-  - "GEOSITE,YOUTUBE,落地节点"  # 替换链式代理为落地节点
-  - "GEOSITE,GOOGLE,落地节点"   # 替换链式代理为落地节点
+  - "GEOSITE,YOUTUBE,落地节点"
+  - "GEOSITE,GOOGLE,落地节点"
   - "GEOSITE,NETFLIX,Netflix"
-  - "GEOSITE,BAHAMUT,巴哈姆特"  
+  - "GEOSITE,BAHAMUT,巴哈姆特"
   - "GEOSITE,BILIBILI,哔哩哔哩"
   - "GEOSITE,CATEGORY-GAMES@CN,全球直连"
   - "GEOSITE,CATEGORY-GAMES,游戏平台"
@@ -661,7 +684,7 @@ rules:
   - "GEOSITE,CN,全球直连"
   - "GEOSITE,PRIVATE,全球直连"
   - "GEOIP,NETFLIX,Netflix,no-resolve"
-  - "GEOIP,GOOGLE,落地节点,no-resolve"  # 替换链式代理为落地节点
+  - "GEOIP,GOOGLE,落地节点,no-resolve"
   - "GEOIP,TELEGRAM,Telegram,no-resolve"
   - "GEOIP,CN,全球直连,no-resolve"
   - "GEOIP,LAN,全球直连,no-resolve"
