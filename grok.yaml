@@ -56,8 +56,8 @@ rule-providers:
     behavior: domain
     interval: 86400
     url: 'https://raw.githubusercontent.com/wangbaoqiang-lixiaolu/substore/refs/heads/main/custom-direct.yaml'
-    path: ./ruleset/custom-direct.yaml  
-    icloud:
+    path: "./ruleset/custom-direct.yaml"  
+  icloud:
     type: http
     format: yaml
     interval: 86400
