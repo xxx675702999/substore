@@ -50,7 +50,7 @@ rule-providers:
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
     path: "./ruleset/loyalsoldier/reject.yaml"
-  custom-direct:
+  customdirect:
     type: http
     format: yaml
     behavior: domain
@@ -200,7 +200,7 @@ rule-providers:
 
 rules:
   - "PROCESS-NAME,steam.exe,🐬 自定义直连"
-  - "RULE-SET,custom-direct,🐬 自定义直连"
+  - "RULE-SET,customdirect,🐬 自定义直连"
   - "DOMAIN-SUFFIX,immersivetranslate.com,🐳 自定义代理"
   - "DOMAIN-SUFFIX,googleapis.cn,🔰 模式选择"
   - "DOMAIN-SUFFIX,gstatic.com,🔰 模式选择"
