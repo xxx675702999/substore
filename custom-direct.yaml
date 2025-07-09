@@ -20,3 +20,6 @@ payload:
   - gvt2.com
   - gstatic.com
   - immersivetranslate.com
+  - mtalk4.google.com
+  - mtalk-staging.google.com
+  - mtalk-dev.google.com
