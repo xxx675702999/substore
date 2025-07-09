@@ -1,5 +1,5 @@
 payload:
-  # Google FCM 推送相关域名（可直连）
+  # Google FCM 推送核心服务（可直连）
   - mtalk.google.com
   - alt1-mtalk.google.com
   - alt2-mtalk.google.com
@@ -10,15 +10,9 @@ payload:
   - alt7-mtalk.google.com
   - alt8-mtalk.google.com
   - firebaseinstallations.googleapis.com
-  - firebase.googleapis.com
   - fcm.googleapis.com
   - gcm.googleapis.com
   - android.clients.google.com
-  - android.googleapis.com
-  - googleapis.com
-  - googleusercontent.com
-  - gvt2.com
-  - gstatic.com
   - immersivetranslate.com
   - mtalk4.google.com
   - mtalk-staging.google.com
