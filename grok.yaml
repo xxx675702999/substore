@@ -57,6 +57,13 @@ rule-providers:
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/wangbaoqiang-lixiaolu/substore@main/custom-direct.yaml"
     path: "./ruleset/custom-direct.yaml"  
+  customproxy:
+    type: http
+    format: yaml
+    behavior: domain
+    interval: 86400
+    url: "https://fastly.jsdelivr.net/gh/wangbaoqiang-lixiaolu/substore@main/custom-proxy.yaml"
+    path: "./ruleset/custom-proxy.yaml"
   icloud:
     type: http
     format: yaml
@@ -201,7 +208,7 @@ rule-providers:
 rules:
   - "PROCESS-NAME,steam.exe,🐬 自定义直连"
   - "RULE-SET,customdirect,🐬 自定义直连"
-  - "DOMAIN-SUFFIX,immersivetranslate.com,🐳 自定义代理"
+  - "RULE-SET,customproxy,🐳 自定义代理"
   - "DOMAIN-SUFFIX,googleapis.cn,🔰 模式选择"
   - "DOMAIN-SUFFIX,gstatic.com,🔰 模式选择"
   - "DOMAIN-SUFFIX,xn--ngstr-lra8j.com,🔰 模式选择"
