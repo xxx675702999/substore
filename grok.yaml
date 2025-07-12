@@ -206,6 +206,7 @@ rule-providers:
     path: "./ruleset/MetaCubeX/microsoft.yaml"
 
 rules:
+  - "PROCESS-NAME,dota2.exe,🐬 自定义直连"
   - "PROCESS-NAME,steam.exe,🐬 自定义直连"
   - "RULE-SET,customdirect,🐬 自定义直连"
   - "RULE-SET,customproxy,🐳 自定义代理"
