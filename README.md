@@ -11,5 +11,5 @@ $server.name = '落地-' + $server.name
 
 3 在文件管理页面导入mihomo配置.json
 
-4custom-proxy.yaml和custom-direct.yaml分别为自定义代理和自定义直连可以根据需要自行设置
+4 custom-proxy.yaml和custom-direct.yaml分别为自定义代理和自定义直连可以根据需要自行设置
 
