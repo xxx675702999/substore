@@ -17,6 +17,6 @@ payload:
   - mtalk4.google.com
   - mtalk-staging.google.com
   - mtalk-dev.google.com
-  - DOMAIN-SUFFIX,gamer520.com
-  - DOMAIN-SUFFIX,linux.do
-  - DOMAIN-SUFFIX,steamdb.info
+  - gamer520.com
+  - linux.do
+  - steamdb.info
