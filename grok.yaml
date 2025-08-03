@@ -55,14 +55,14 @@ rule-providers:
     format: yaml
     behavior: domain
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/xxx675702999/substore/custom-direct.yaml"
+    url: "https://github.limoruirui.com/https://raw.githubusercontent.com/xxx675702999/substore/refs/heads/main/custom-direct.yaml"
     path: "./ruleset/custom-direct.yaml"  
   customproxy:
     type: http
     format: yaml
     behavior: domain
     interval: 86400
-    url: "https://fastly.jsdelivr.net/gh/xxx675702999/substore/custom-proxy.yaml"
+    url: "https://github.limoruirui.com/https://raw.githubusercontent.com/xxx675702999/substore/refs/heads/main/custom-proxy.yaml"
     path: "./ruleset/custom-proxy.yaml"
   icloud:
     type: http
